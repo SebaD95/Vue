@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li> <a href="llamada-metodos-y-manipulacion-de-propiedades.html">Llamada a métodos y manipulación de propiedades</a></li>
+            <li> <a href="atributos-dinamicos-v-bind.html">Binding de atributos HTML con v-bind</a></li>
+            <li> <a href="binding-doble-via-v-model.html">Binding de doble vá con v-model</a></li>
+            <li> <a href="">Bucles</a></li>
+            <ul>
+                <li><a href="for-arrays-listas.html">Estructura v-for, recorrido de arrays y creación de listas</a></li>
+                <li><a href="bucles-anidados.html">Bucles anidados con v-for, obtener indice, bucles a partir de rangos</a></li>
+            </ul>
+            <li><a href="conexion-api.html">Conexión a API pública para datos de prueba</a></li>
+            <li><a href="creacion-tabla.html">Creación de tabla</a></li>
+            <li><a href="render-v-if.html">Renderizado condicional con v-if</a></li>
+            <li><a href="manejo-de-eventos.html">Manejo de eventos</a></li>
+        </ul>
+       
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        //data, methods, props, mounted, created, computed, watch, destroyed
+        const holaMundo = {
+            data() {
+                return {
+                    nombre: 'nombre',
+                    anio: 2022,
+                    meses: ['Enero', 'Mayo', 'Octubre']
+                }
+            }
+        }
+
+        Vue.createApp(holaMundo).mount('#app')
+    </script>
+</body>
+</html>

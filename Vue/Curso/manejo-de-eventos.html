@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+        
+        <button class="btn indigo darken-4" @click="contador++">Haz click</button>
+        {{ contador }}
+        <hr>
+        <button class="btn indigo darken-4" @mouseout="(estado = false)" @mouseover="estado = true">Coloca el puntero sobre mi</button>
+        Estado mouse: {{ estado }}
+        <hr>
+        <!-- <img :src="imagen" v-show="estado"> keydown, load--> 
+        <hr>
+        <select v-on:change="cambiarImagen($event)" class="browser-default">
+            <option value="logo.jpg">Logo</option>
+            <option value="escudo.jpg">Escudo</option>
+        </select>
+        <img :src="imagen">
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        //data, methods, props, mounted, created, computed, watch, destroyed
+        const holaMundo = {
+            data() {
+                return {
+                    contador: 0,
+                    estado: false,
+                    imagen: ''
+                }
+            },
+            methods: {
+                cambiarImagen(event) {
+                    this.imagen = event.target.value
+                }
+            }
+        }
+
+        Vue.createApp(holaMundo).mount('#app')
+    </script>
+</body>
+</html>

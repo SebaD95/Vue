@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <h5 v-if="numero_1 > numero_2">El número {{ numero_1 }} es mayor que el número {{ numero_2 }}</h5>
+      <h5 v-else-if="numero_1 == numero_2">El número {{ numero_1 }} es igual que el número {{ numero_2 }}</h5>
+      <h5 v-else>El número {{ numero_1 }} es menor que el número {{ numero_2 }}</h5>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        //data, methods, props, mounted, created, computed, watch, destroyed
+        const holaMundo = {
+            data() {
+                return {
+                   numero_1: 5,
+                   numero_2: 8
+                }
+            }
+        }
+
+        Vue.createApp(holaMundo).mount('#app')
+    </script>
+</body>
+</html>
